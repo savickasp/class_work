@@ -1,11 +1,22 @@
 <?php
 
-$x = 0;
+$result = '';
 
-function change_x(&$x) {
-    $x = 1;
+if (isset($_POST['number']) && is_numeric($_POST['number'])) {
+    $result = $_POST['number'] * $_POST['number'];
 }
+?>
 
-change_x($x);
-
-print $x;
+<html>
+<head>
+    <title>Class_work</title>
+</head>
+<body>
+<form method="post">
+    <label>Ka pakelti kvadratu</label>
+    <input type="number" name="number">
+    <button> Submit</button>
+</form>
+<h2>Arsakymas: <?=$result?></h2>
+</body>
+</html>
